@@ -3,8 +3,11 @@
 <a href="https://travis-ci.org/karanvivekbhargava/vanilla-neural-network">
 <img src="https://travis-ci.org/karanvivekbhargava/vanilla-neural-network.svg?branch=master">
 </a>
+
+
 <p align="center">
 <img src="https://www.pyimagesearch.com/wp-content/uploads/2016/08/simple_neural_network_header.jpg">
+
 Reference for image: <a href='https://www.pyimagesearch.com'>link</a>
 </p>
 
@@ -17,24 +20,27 @@ The Barzilai-Borwein method has been used to solve the optimization problem.
 ## Dependencies
 
 This project uses the following:
-* python 2.7
-* numpy 1.11.0 - for matrix manupulations
-* sklearn - to load data
-* matplotlib - to visualize the loss
+* `python 2.7`
+* `numpy 1.11.0` - for matrix manupulations
+* `sklearn` - to load data (this has a dependency with `scipy`)
+* `matplotlib` - to visualize the loss
 
 To install them kindly enter the following on the terminal
 ```
 pip install numpy==1.11.0
+pip install scipy
 pip install sklearn
 pip install matplotlib
 ```
 
 ## How to build demo - standard install via command-line
+The code below runs the example on the iris dataset. Since its a small dataset with low dimensions, the algorithm converges quite fast.
 ```
 git clone --recursive https://github.com/karanvivekbhargava/vanilla-neural-network.git
 cd <path to repository>
 python main.py
 ```
+In order to view the graph for the residuals during training, change the False to True on `line 17` of `main.py`. This was done for the continuous integration on Travis.
 
 ## Example
 
