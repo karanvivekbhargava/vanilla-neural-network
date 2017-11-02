@@ -22,7 +22,7 @@ class Net:
             self.W.append(np.random.normal(
                 0, 1 / np.sqrt(self.W[-1].shape[1]), (self.W[-1].shape[1], dim)))
 
-    def solver(self):
+    def solver(self, graphFlag=False):
         assert(self.W != None), "No layers have been added"
         assert(self.W[0].shape[0] == self.data[0].shape[1]
                ), "The network input dimension doesn't match the data"
@@ -31,7 +31,8 @@ class Net:
         x_train, y_train, x_valid, y_valid, x_test, y_test = self.data[
             0], self.data[1], self.data[2], self.data[3], self.data[4], self.data[5]
         # Call bb solver
-        bb_solver(self.W, x_train, y_train, x_valid, y_valid, x_test, y_test)
+        bb_solver(self.W, x_train, y_train, x_valid,
+                  y_valid, x_test, y_test, graphFlag=False)
 
 
 def readData(split_ratio=0.7):
@@ -192,7 +193,7 @@ def getInitialStep(grad, W, x0):
     return 2 * np.linalg.norm(y - x0) / np.linalg.norm(grad(vec_to_list(y, W)) - grad(vec_to_list(x0, W)))
 
 
-def bb_solver(W, x_train, y_train, x_valid, y_valid, x_test, y_test):
+def bb_solver(W, x_train, y_train, x_valid, y_valid, x_test, y_test, graphFlag=False):
     D = x_train
     L = y_train
 
@@ -258,11 +259,12 @@ def bb_solver(W, x_train, y_train, x_valid, y_valid, x_test, y_test):
         y_test, axis=1)) * 100.0 / x_test.shape[0]
     print "Test Accuracy = ", accuracy_test
 
-    # Plot the convergence curve
-    plt.figure(1)
-    plt.plot(range(len(res)), res)
-    plt.yscale('log')
-    plt.title('Residuals of Neural Network with Barzilai-Borwein solver')
-    plt.xlabel('Number of iterations')
-    plt.ylabel('Residual')
-    plt.show()
+    if (graphFlag):
+        # Plot the convergence curve
+        plt.figure(1)
+        plt.plot(range(len(res)), res)
+        plt.yscale('log')
+        plt.title('Residuals of Neural Network with Barzilai-Borwein solver')
+        plt.xlabel('Number of iterations')
+        plt.ylabel('Residual')
+        plt.show()
