@@ -4,11 +4,11 @@ python:
 # command to install dependencies
 install:
   # - pip install -r requirements.txt
-  - pip install numpy
+  - pip install -I numpy==1.11.0
   - pip install sklearn
   - pip install matplotlib
 # command to run tests
 script:
   # - pytest # or py.test for Python versions 3.5 and below
-  python check_numpy.py
+  # python check_numpy.py
   python main.py
