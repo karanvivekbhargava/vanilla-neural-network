@@ -5,6 +5,7 @@ python:
 install:
   # - pip install -r requirements.txt
   - pip install -I numpy==1.11.0
+  - pip install scipy
   - pip install sklearn
   - pip install matplotlib
 # command to run tests
