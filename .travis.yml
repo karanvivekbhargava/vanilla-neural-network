@@ -1,18 +1,14 @@
 language: python
 python:
-  - "2.7"
+  - "2.7.12"
 # command to install dependencies
 install:
   # - pip install -r requirements.txt
   - pip install numpy
-  - pip install scipy
   - pip install sklearn
   - pip install matplotlib
 # command to run tests
 script:
   # - pytest # or py.test for Python versions 3.5 and below
-  python
-  import numpy
-  numpy.version.version
-  exit()
+  python check_numpy.py
   python main.py
