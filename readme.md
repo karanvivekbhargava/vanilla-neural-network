@@ -3,26 +3,28 @@
 <a href="https://travis-ci.org/karanvivekbhargava/vanilla-neural-network">
 <img src="https://travis-ci.org/karanvivekbhargava/vanilla-neural-network.svg?branch=master">
 </a>
-<!-- <p align="center">
-<img src="https://cdn.andnowuknow.com/mainStoryImage/robot_butler_aug_2014_banner.jpg">
-Reference for image: <a href='http://www.savioke.com/'>link</a> -->
+<p align="center">
+<img src="https://www.pyimagesearch.com/wp-content/uploads/2016/08/simple_neural_network_header.jpg">
+Reference for image: <a href='https://www.pyimagesearch.com'>link</a>
 </p>
 
 ## Project Overview
 
 This is an implementation of an optimized neural network using python. Various optimization methods have been used in conjunction to make the network converge faster. Sigmoid non-linearities have been sandwiched between the layers. The final loss function has been chosen as the softmax layer. The neural network is very flexible and can be used with different number of layers.
 
+The Barzilai-Borwein method has been used to solve the optimization problem.
+
 ## Dependencies
 
 This project uses the following:
 * python 2.7
-* numpy - for matrix manupulations
+* numpy 1.11.0 - for matrix manupulations
 * sklearn - to load data
 * matplotlib - to visualize the loss
 
 To install them kindly enter the following on the terminal
 ```
-pip install numpy
+pip install numpy==1.11.0
 pip install sklearn
 pip install matplotlib
 ```

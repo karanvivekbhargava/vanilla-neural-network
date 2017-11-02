@@ -14,4 +14,4 @@ if __name__ == "__main__":
     nn.addLayer(20)
     nn.addLayer(y_train.shape[1])
     # Start the NN solver
-    nn.solver()
+    nn.solver(graphFlag=False)
