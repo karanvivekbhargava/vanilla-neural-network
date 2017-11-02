@@ -3,7 +3,7 @@
 <a href="https://travis-ci.org/karanvivekbhargava/vanilla-neural-network">
 <img src="https://travis-ci.org/karanvivekbhargava/vanilla-neural-network.svg?branch=master">
 </a>
-
+<a href='https://opensource.org/licenses/MIT'><img src='https://img.shields.io/badge/License-MIT-brightgreen.svg'/></a>
 
 <p align="center">
 <img src="https://www.pyimagesearch.com/wp-content/uploads/2016/08/simple_neural_network_header.jpg">
@@ -15,7 +15,7 @@ Reference for image: <a href='https://www.pyimagesearch.com'>link</a>
 
 This is an implementation of an optimized neural network using python. Various optimization methods have been used in conjunction to make the network converge faster. Sigmoid non-linearities have been sandwiched between the layers. The final loss function has been chosen as the softmax layer. The neural network is very flexible and can be used with different number of layers.
 
-The Barzilai-Borwein method has been used to solve the optimization problem.
+The Barzilai-Borwein method has been used to solve the optimization problem. Every optimization technique has been written from scratch.
 
 ## Dependencies
 
